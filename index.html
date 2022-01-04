@@ -1,16 +1,33 @@
+<!DOCTYPE html>
 <html>
-    <head>
+    <head><title> Simple Interest Calculator </title>
     <script src="script.js"></script>
     <link rel="stylesheet" href="style.css">
     </head>
     <body>
+        <div class="maindiv">
         <h1>Simple Interest Calculator</h1>
-
-        Amount <input type="number"  id="principal">  <br/>
-        Rate <input type="number"  id="rate">  <br/>
-        No. of Years <input type="number"  id="years">  <br/>
-        Interest : <span id="result"></span><br>
-
-        <button onclick="compute()">Compute</button>
+    <form name="myForm" action="/action_page.php" onsubmit="return validateForm()" method="post">
+        Amount <input type="number" required placeholder='Enter a positive #' id="principal"><br><br>
+        Interest Rate <input type="range" onchange="updateRate()" id="rate" step="0.5" min="1" max="20" value="10.25">
+        <span id="rate_val"> 10.25% </span><br><br>
+        <label for="years">No. of years</label>
+        <select name="years" id="years">
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+          <option value="7">7</option>
+          <option value="8">8</option>
+          <option value="9">9</option>
+          <option value="10">10</option>
+        </select><br><br>
+        <button onclick="compute()">Compute Interest</button><br>
+        <span id="result"> </span><br><br>
+    </form>
+        <footer> &#169; This Calculator belongs to Nixon </footer>
+        </div>
     </body>
 </html>
